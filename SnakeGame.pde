@@ -1,9 +1,9 @@
 Game game;
 void setup() {
-  size(500, 500);
-  frameRate(18);
+  size(600, 600);
+  frameRate(15);
   noStroke();
-  game = new Game(20);
+  game = new Game(10);
   game.start();
 }
 

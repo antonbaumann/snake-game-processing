@@ -11,11 +11,6 @@ class Food {
   void spawn() {
     pos.x = int(random(game.cols));
     pos.y = int(random(game.rows));
-    
-    println("Food: ");
-    println("x: " + pos.x);
-    println("y: " + pos.y);
-    println();
   }
   
   void show() {

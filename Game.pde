@@ -3,6 +3,8 @@ class Game {
   Food food;
   Score score;
   
+  boolean running;
+  
   int rows;
   int cols;
   int a;
@@ -13,18 +15,22 @@ class Game {
    this.a = a;
    this.rows = height / a;
    this.cols = width / a;
+   this.running = false;
   }
   
   void start() {
     snake = new Snake(a);
     food = new Food(a);
     score = new Score();
+    running = true;
   }
   
   void update() {
-    snake.update();
-    if (!snake.alive) {
-      gameOver();
+    if (running) {
+      snake.update();
+      if (!snake.alive) {
+        gameOver();
+      }
     }
   }
   
@@ -52,8 +58,14 @@ class Game {
         snake.setDirection("down");
       }
     }
+    if(key == 'p') {
+        togglePause();
+      }
   }
   
+  void togglePause() {
+    running = !running;
+  }
   void gameOver() {
     bg = color(128,0,0);
   }
