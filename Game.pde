@@ -20,6 +20,7 @@ class Game {
   }
   
   void start() {
+    bg = color(55);
     snake = new Snake(a);
     food = new Food(a);
     score = new Score();
@@ -63,6 +64,9 @@ class Game {
     }
     if(key == 'p' || key == ' ') {
         togglePause();
+    }
+    if(key == 'r') {
+        start();
     }
   }
   
