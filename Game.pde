@@ -2,6 +2,7 @@ class Game {
   Snake snake;
   Food food;
   Score score;
+  Clock clock;
   
   boolean running;
   
@@ -22,6 +23,7 @@ class Game {
     snake = new Snake(a);
     food = new Food(a);
     score = new Score();
+    clock = new Clock();
     running = true;
   }
   
@@ -39,6 +41,7 @@ class Game {
     fill(bg);
     rect(0, 0, a * cols, a * rows);
     score.show();
+    clock.show();
     snake.show();
     food.show();
   }
@@ -58,9 +61,9 @@ class Game {
         snake.setDirection("down");
       }
     }
-    if(key == 'p') {
+    if(key == 'p' || key == ' ') {
         togglePause();
-      }
+    }
   }
   
   void togglePause() {

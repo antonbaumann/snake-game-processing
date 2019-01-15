@@ -6,7 +6,7 @@ class Score {
   
   Score() {
     font = loadFont("font.vlw");
-    pos = new PVector(15, 62);
+    pos = new PVector(15, 60);
     col = color(255, 255, 255);
     score = 0;
   }
@@ -23,6 +23,7 @@ class Score {
     textFont(font);
     fill(col);
     textSize(64); 
+    textAlign(LEFT);
     text(score, pos.x, pos.y);
   }
 }
